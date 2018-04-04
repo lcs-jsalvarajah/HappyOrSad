@@ -36,15 +36,28 @@ for individualCharacter in input {
     } else if individualCharacter == "☹️" {
         //track a sad
         sadFace += 1
-    } else if individualCharacter == "😀" {
+    } else if individualCharacter == "🙂" {
         // Track happy
         happyFace += 1
     } else if individualCharacter == "😕" {
         //Track a sad
         sadFace += 1
+    } else if individualCharacter == "😔" {
+//Track a sad
+         sadFace += 1
+    }  else if individualCharacter == "🙁" {
+        //Track a sad
+        sadFace += 1
+    }  else if individualCharacter == "☺️" {
+        // Track happy
+      sadFace += 1
+    } else if individualCharacter == "😄" {
+        // Track happy
+        happyFace += 1
     }
-    
 }
+//Output
+// Tell the user "happy", "sad" or "unsure" based on counts above
 
 if happyFace > sadFace {
     print("Happy")
@@ -53,8 +66,4 @@ if happyFace > sadFace {
 } else {
     print("Unsure")
 }
-
-
-//Output
-// Tell the user "happy", "sad" or "unsure" based on counts above
 
