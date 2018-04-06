@@ -30,6 +30,14 @@ for individualCharacter in input {
     print(individualCharacter)
     
     // Catogroize each character
+    switch individualCharacter {
+    case "😃" , "🙂" , "😊" , "😄" :
+        happyFace += 1
+    case "☹️" , "😕" , "😔" , "🙁" :
+        sadFace += 1
+    default:
+        break // Do nothing
+    }
     if individualCharacter == "😃" {
         // Track a Happy
         happyFace += 1
