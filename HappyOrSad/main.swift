@@ -8,26 +8,47 @@
 
 import Foundation
 
+// Loop forever until value input is given
+var validInput = ""
+while 1==1 {
+    guard let givenInput = readLine() else {
+        // Tell the user that there is a problem
+        print("Please Enter a string between 1 to 255 characters.")
+        //Go to the next itteration of the loop
+        continue
+    }
+    
+    //Is the string the correct length
+    if givenInput.count < 1 || givenInput.count >= 255 {
+        // Tell the user that there is a problem
+        print("Please Enter a string between 1 to 255 characters.")
+        //Go to the next itteration of the loop
+        continue
+    }
+    
+    //If we got this far the input is valid
+    validInput = givenInput
+    break // Very Important - this stops the while loop
+}
+
 // Get the user input
 var rawInput = readLine()
 
 // Make sure input was given (create a string from the string)
-guard let input = rawInput else {
-    //Error
-    exit(9)
-}
 
-// Print out the input provided
-print("You said:")
-print(rawInput) // Optional String
-print(input) //Non-Optional
 
+// Print out the input provided --> COMMENTED OUT: USEFUL FOR DEBUGGING
+//print("You said:")
+//print(rawInput) // Optional String
+//print(input) //Non-Optional
+
+
+//PROCESS
 var happyFace = 0
 var sadFace = 0
 // process- inspect each charachter
-for individualCharacter in input {
-    //Debug
-    print(individualCharacter)
+for individualCharacter in validInput {
+    
     
     // Catogroize each character
     switch individualCharacter {
@@ -38,34 +59,7 @@ for individualCharacter in input {
     default:
         break // Do nothing
     }
-    if individualCharacter == "😃" {
-        // Track a Happy
-        happyFace += 1
-    } else if individualCharacter == "☹️" {
-        //track a sad
-        sadFace += 1
-    } else if individualCharacter == "🙂" {
-        // Track happy
-        happyFace += 1
-    } else if individualCharacter == "😕" {
-        //Track a sad
-        sadFace += 1
-    } else if individualCharacter == "😔" {
-      //Track a sad
-         sadFace += 1
-    }  else if individualCharacter == "🙁" {
-        //Track a sad
-        sadFace += 1
-    }  else if individualCharacter == "☺️" {
-        // Track happy
-      sadFace += 1
-    } else if individualCharacter == "😊" {
-        // Track happy
-        happyFace += 1
-    } else if individualCharacter == "😄" {
-        // Track happy
-        happyFace += 1
-}
+
 }
 //Output
 // Tell the user "happy", "sad" or "unsure" based on counts above
